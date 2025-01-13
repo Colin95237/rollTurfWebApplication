@@ -1,0 +1,13 @@
+<div class="invoice-overview-container">
+  <h2>Rechnungsübersicht</h2>
+  <div>
+    <p><strong>Name:</strong> {{ order.name }}</p>
+    <p><strong>Adresse:</strong> {{ order.address }}</p>
+    <p><strong>Postleitzahl:</strong> {{ order.zipcode }}</p>
+    <p><strong>Stadt:</strong> {{ order.city }}</p>
+  </div>
+  <p><strong>Gesamtpreis: {{ order.totalPrice | currency }}</strong></p>
+  <p class="note">
+    <strong>Wichtig:</strong> Dies ist eine Zusammenfassung Ihrer Rechnung. Der Gesamtpreis entspricht dem zu zahlenden Betrag für Ihre Bestellung. Bitte überprüfen Sie alle Details sorgfältig. Bei Unstimmigkeiten oder Problemen kontaktieren Sie uns bitte umgehend.
+  </p>
+</div>

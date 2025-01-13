@@ -1,0 +1,50 @@
+<div class="price-calculator-container">
+  <h2 class="form-title">Preisrechner</h2>
+
+  <form [formGroup]="priceCalculatorForm" (ngSubmit)="calculatePrice()" class="price-calculator-form">
+    <div class="form-group">
+      <label for="postcode">Postleitzahl:</label>
+      <input
+        type="number"
+        id="postcode"
+        formControlName="postcode"
+        [ngClass]="{ 'is-invalid': priceCalculatorForm.get('postcode')?.invalid && priceCalculatorForm.get('postcode')?.touched }"
+      >
+      <div *ngIf="priceCalculatorForm.get('postcode')?.invalid && priceCalculatorForm.get('postcode')?.touched" class="error">
+        <small *ngIf="priceCalculatorForm.get('postcode')?.hasError('required')">Postleitzahl ist erforderlich.</small>
+        <small *ngIf="priceCalculatorForm.get('postcode')?.hasError('min')">Postleitzahl muss mindestens 1067 sein.</small>
+        <small *ngIf="priceCalculatorForm.get('postcode')?.hasError('max')">Postleitzahl darf maximal 99999 sein.</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="area">Fläche (m²):</label>
+      <input
+        type="number"
+        id="area"
+        formControlName="area"
+        [ngClass]="{ 'is-invalid': priceCalculatorForm.get('area')?.invalid && priceCalculatorForm.get('area')?.touched }"
+      >
+      <div *ngIf="priceCalculatorForm.get('area')?.invalid && priceCalculatorForm.get('area')?.touched" class="error">
+        <small *ngIf="priceCalculatorForm.get('area')?.hasError('required')">Fläche ist erforderlich.</small>
+        <small *ngIf="priceCalculatorForm.get('area')?.hasError('min')">Die Fläche muss größer als 0 sein.</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="turf">Rollrasen auswählen:</label>
+      <select
+        id="turf"
+        formControlName="selectedTurfId"
+        [ngClass]="{ 'is-invalid': priceCalculatorForm.get('selectedTurfId')?.invalid && priceCalculatorForm.get('selectedTurfId')?.touched }"
+      >
+        <option *ngFor="let turf of turfs" [value]="turf.id">{{ turf.name }}</option>
+      </select>
+      <div *ngIf="priceCalculatorForm.get('selectedTurfId')?.invalid && priceCalculatorForm.get('selectedTurfId')?.touched" class="error">
+        <small>Rollrasentyp ist erforderlich.</small>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-button" [disabled]="priceCalculatorForm.invalid">Berechnen</button>
+  </form>
+</div>

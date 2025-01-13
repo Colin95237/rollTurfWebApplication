@@ -1,0 +1,14 @@
+<div class="order-overview-container">
+  <h2>Bestellübersicht</h2>
+  <div>
+    <p><strong>Name:</strong> {{ order.name }}</p>
+    <p><strong>Adresse:</strong> {{ order.address }}</p>
+    <p><strong>Postleitzahl:</strong> {{ order.zipcode }}</p>
+    <p><strong>Stadt:</strong> {{ order.city }}</p>
+  </div>
+  <p><strong>Gesamtpreis: {{ order.totalPrice | currency }}</strong></p>
+  <p class="note">
+    <strong>Hinweis:</strong> Bitte überprüfen Sie die Bestelldetails sorgfältig, bevor Sie fortfahren. Bei Fragen oder Unklarheiten können Sie sich gerne an unser Support-Team wenden.
+  </p>
+  <button (click)="proceedToInvoice()">Weiter zur Rechnung</button>
+</div>

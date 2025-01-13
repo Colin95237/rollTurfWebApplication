@@ -1,0 +1,11 @@
+<div class="result-container">
+  <h2 class="result-title">Preisrechner - Ergebnis</h2>
+
+  <div class="result-details">
+    <p><strong>Postleitzahl:</strong> {{ postcode }}</p>
+    <p><strong>Fläche:</strong> {{ area }} m²</p>
+    <p class="price"><strong>Preis:</strong> {{ price }} Euro</p>
+  </div>
+
+  <button (click)="goToOrderForm()" class="continue-button">Weiter zur Bestellung</button>
+</div>

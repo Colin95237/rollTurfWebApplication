@@ -1,0 +1,47 @@
+.result-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.result-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.result-details p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.result-details p strong {
+  color: #333;
+}
+
+.price {
+  font-size: 20px;
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.continue-button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.continue-button:hover {
+  background-color: #45a049;
+}
